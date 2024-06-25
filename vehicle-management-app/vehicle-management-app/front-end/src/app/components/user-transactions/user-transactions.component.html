@@ -1,0 +1,61 @@
+<!-- user-transactions.component.html -->
+
+<div class="container">
+  <h2>User Transactions</h2>
+
+  <table mat-table [dataSource]="userTransactions" class="mat-elevation-z8">
+
+    <!-- Transaction ID Column -->
+    <ng-container matColumnDef="transaction_id">
+      <th mat-header-cell *matHeaderCellDef> Transaction ID </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.transaction_id }} </td>
+    </ng-container>
+
+     <!-- Model Column -->
+     <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef> Model </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.model }} </td>
+    </ng-container>
+
+    <!-- Make Column -->
+    <ng-container matColumnDef="make">
+      <th mat-header-cell *matHeaderCellDef> Make </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.make }} </td>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container matColumnDef="color">
+      <th mat-header-cell *matHeaderCellDef> Color </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.color }} </td>
+    </ng-container>
+
+     <!-- Year Column -->
+     <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef> Year </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.year }} </td>
+    </ng-container>
+
+    <!-- Transaction Date Column -->
+    <ng-container matColumnDef="transaction_date">
+      <th mat-header-cell *matHeaderCellDef> Transaction Date </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.transaction_date | date:'medium' }} </td>
+    </ng-container>
+
+    <!-- Transaction Type Column -->
+    <ng-container matColumnDef="transaction_type">
+      <th mat-header-cell *matHeaderCellDef> Transaction Type </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.transaction_type }} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Status </th>
+      <td mat-cell *matCellDef="let transaction"> {{ transaction.status }} </td>
+    </ng-container>
+
+    <!-- Add more columns as needed -->
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

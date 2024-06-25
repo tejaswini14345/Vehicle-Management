@@ -1,0 +1,27 @@
+<mat-card class="user-profile-card">
+  <div class="user-content">
+    <div class="user-avatar-container">
+      <img class="user-avatar-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/OOjs_UI_icon_userAvatar-progressive.svg/1200px-OOjs_UI_icon_userAvatar-progressive.svg.png" alt="User Avatar">
+    </div>
+    <div class="user-details">
+      <mat-card-header style="text-align: center;">
+        <div mat-card-avatar class="user-avatar"></div>
+        <mat-card-title>{{ userProfile.name }}</mat-card-title>
+        <mat-card-subtitle>{{ userProfile.email }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Welcome to your user profile! Here you can find information about yourself.
+          You can customize this section to display additional details about your account,
+          preferences, and any other relevant information.
+        </p>
+      </mat-card-content>
+    </div>
+
+
+  </div>
+
+  <mat-card-actions>
+    <!-- Add actions or buttons here if needed -->
+  </mat-card-actions>
+</mat-card>

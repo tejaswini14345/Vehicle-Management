@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Add Vehicle</h2>
+
+<mat-dialog-content>
+  <form #addVehicleForm="ngForm">
+    <mat-form-field class="input-field-format" appearance="fill">
+      <mat-label>Model</mat-label>
+      <input matInput name="model" [(ngModel)]="vehicle.model" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-field-format" appearance="fill">
+      <mat-label>Make</mat-label>
+      <input matInput name="make" [(ngModel)]="vehicle.make" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-field-format" appearance="fill">
+      <mat-label>Color</mat-label>
+      <input matInput name="color" [(ngModel)]="vehicle.color" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-field-format" appearance="fill">
+      <mat-label>Year</mat-label>
+      <input matInput name="year" [(ngModel)]="vehicle.year" required>
+    </mat-form-field>
+
+    <mat-form-field class="input-field-format" appearance="fill">
+      <mat-label>Price</mat-label>
+      <input matInput name="price" [(ngModel)]="vehicle.price" required>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<div>
+  <mat-dialog-actions style="justify-content: end;">
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-button color="primary" [disabled]="addVehicleForm.invalid" (click)="onSaveClick()">Add</button>
+  </mat-dialog-actions>
+</div>
+

@@ -1,0 +1,45 @@
+/* Style the landing page */
+.landing-page {
+  background-image: url(https://images.pexels.com/photos/5257295/pexels-photo-5257295.jpeg?auto=compress&cs=tinysrgb&w=1600);
+    background-size: cover;
+    background-position: center;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: -12px;
+}
+
+/* Style the user registration form */
+.user-registration {
+  text-align: center;
+  padding: 20px;
+  max-width: 500px; /* Set a maximum width for the form */
+}
+
+.registration-content {
+  background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style the input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}

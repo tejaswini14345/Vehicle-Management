@@ -1,0 +1,35 @@
+<div class="landing-page">
+  <div class="user-registration">
+    <div class="registration-content">
+      <h1>User Registration</h1>
+
+      <form (ngSubmit)="registerUser()" [formGroup]="registrationForm">
+        <mat-form-field class="form-group">
+          <mat-label for="name">Name</mat-label>
+          <input matInput type="text" id="name" formControlName="name" required />
+        </mat-form-field>
+
+        <mat-form-field class="form-group">
+          <mat-label for="email">Email</mat-label>
+          <input matInput type="email" id="email" formControlName="email" required />
+        </mat-form-field>
+
+        <mat-form-field class="form-group">
+          <mat-label for="password">Password</mat-label>
+          <input matInput type="password" id="password" formControlName="password" required />
+        </mat-form-field>
+
+        <mat-form-field class="form-group">
+          <mat-label>Choose a role...</mat-label>
+          <mat-select formControlName="role" required>
+            <mat-option *ngFor="let role of Roles" [value]="role">{{ role }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <button mat-raised-button type="submit" [disabled]="registrationForm.invalid">
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

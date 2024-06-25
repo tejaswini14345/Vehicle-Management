@@ -1,0 +1,24 @@
+.user-profile-card {
+  width: 60%; /* Adjust the width as needed */
+  margin: 20px 50px; /* Center the card on the page */
+
+  .user-content {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .user-details {
+    width: 60%; /* Adjust the width as needed */
+  }
+
+  .user-avatar-container {
+    width: 30%;
+  }
+
+  .user-avatar-img {
+    width: 100%;
+    margin-left: 30px;
+  }
+}

@@ -1,0 +1,61 @@
+<div class="vehicle-management-container">
+  <h2>Manage Vehicle Catalog</h2>
+
+  <div style="float: right;">
+    <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <mat-icon>add</mat-icon> Add Vehicle
+    </button>
+  </div>
+
+  <div style="margin-top: 4%;">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Model Column -->
+      <ng-container matColumnDef="model">
+        <mat-header-cell *matHeaderCellDef> Model </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle"> {{ vehicle.model }} </mat-cell>
+      </ng-container>
+
+      <!-- Make Column -->
+      <ng-container matColumnDef="make">
+        <mat-header-cell *matHeaderCellDef> Make </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle"> {{ vehicle.make }} </mat-cell>
+      </ng-container>
+
+      <!-- Color Column -->
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef> Color </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle"> {{ vehicle.color }} </mat-cell>
+      </ng-container>
+
+      <!-- Year Column -->
+      <ng-container matColumnDef="year">
+        <mat-header-cell *matHeaderCellDef> Year </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle"> {{ vehicle.year }} </mat-cell>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle"> {{ vehicle.price }} </mat-cell>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let vehicle">
+          <button mat-icon-button color="primary" (click)="openEditDialog(vehicle)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteVehicle(vehicle)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+    </mat-table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+</div>
